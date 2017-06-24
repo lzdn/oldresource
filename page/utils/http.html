@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>HTTP</title>
+		<link rel="stylesheet" href="../../css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" href="../../css/bootstrap.min.css" />
+		<style>
+			.site-http-top {}
+			
+			.site-http-top select {
+				height: 30px;
+				width: 60px;
+			}
+			
+			.site-http-top input {
+				height: 30px;
+				width: 500px;
+			}
+			
+			.site-http-top input[type=button] {
+				height: 30px;
+				width: 50px;
+			}
+		</style>
+		<script type="text/javascript">
+			function send() {
+				/*	$('#send').attr("disabled", "disabled");
+					$("#send").attr("class", "bg-danger");*/
+				var options = $("#chooseMethod option:selected");
+				var method = options.val();
+				var RURL = $("#RURL").val();
+				var requestContext = $("#requestContext").val();
+				if(!method) {
+					return false;
+				}
+				if(!RURL) {
+					return false;
+				}
+				if(!requestContext) {
+					//	return false;
+				}
+				var fm = document.getElementsByName("fm-request");
+				fm.submit();
+				/*$.ajax({
+					url: RURL,
+					data: requestContext,
+					type: method,
+					cache: false,
+					async: false,
+					dataType: 'json',
+					success: function(data) {
+						var responseContext = $("#responseContext");
+						responseContext.value = data;
+					},
+					error: function() {
+						$("#responseContext").val("请求异常！");
+					}
+				});*/
+				/*$('#send').attr("disabled","");
+				$("#send").attr("class", "bg-primary"); */
+			}
+		</script>
+	</head>
+
+	<body>
+
+		<header>
+			<div style="margin:0 auto;height: 50px;width: 100px;">
+				<label>AUTHER:LZDN</label>
+			</div>
+		</header>
+		<div class="container">
+			<div class="site-http-top">
+				<select id="chooseMethod">
+					<option value="get">GET</option>
+					<option value="post">POST</option>
+				</select>
+				<input type="text" id="RURL" name="RURL" placeholder="URL" />
+				<input type="button" id="send" class="bg-primary" value="请求" onclick="send()" />
+				<legend>请求报文</legend>
+				<form name="fm-request" action="/coreServlet" method="get">
+					<textarea id="requestContext" cols="150" rows="10">
+							
+						</textarea>
+				</form>
+
+				<legend>返回报文</legend>
+
+				<textarea id="responseContext" cols="150" rows="10">
+							
+						</textarea>
+
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+
+</html>

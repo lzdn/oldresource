@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>WIKI</title>
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<style>
+			.site-top {
+				margin-top: 60px;
+			}
+			
+			.site-center {}
+			
+			.site-center-bg {
+				border-left: 1px solid #C9E2B3;
+			}
+			
+			.site-input-form {
+				width: 400px !important;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">我的资源</a>
+				</div>
+				<form class="navbar-form navbar-left" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control site-input-form" placeholder="Search">
+					</div>
+					<!--<button type="submit" class="btn btn-default">Submit</button>-->
+					<button type="button" class="btn btn-success">搜索吧</button>
+				</form>
+				<ul class="nav navbar-nav navbar-left">
+					<li>
+						<a href="javascript:void();" id="add">添加</a>
+					</li>
+					<li>
+						<a href="#">删除</a>
+					</li>
+					<!--	<li>
+						<a href="#">wiki知识库</a>
+					</li>-->
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="login.html">[登录]</a>
+					</li>
+					<li>
+						<a href="logout.html">[退出]</a>
+					</li>
+					 
+					<!--	<li>
+						<a href="page/user/register.html">注册</a>
+					</li>
+					<li>
+						<a href="page/user/logout.html">注销</a>
+					</li>-->
+					<!--		<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							工具 <b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="#">系统设置</a>
+							</li>
+							<li>
+								<a href="#">http工具</a>
+							</li>
+						</ul>
+					</li>-->
+				</ul>
+			</div>
+		</div>
+		<div class="site-top">
+			<div class="row">
+				<div class="col-md-2">
+					<ul class="list-group">
+						<li class="list-group-item">
+							<a href="#">MongoDB简介</a>
+						</li>
+						<li class="list-group-item">
+							<a href="#">Java设计模式</a>
+						</li>
+						<li class="list-group-item">
+							<a href="#">MongoDB简介</a>
+						</li>
+						<li class="list-group-item">
+							<a href="#">MongoDB简介</a>
+						</li>
+						<li class="list-group-item">
+							<a href="#">MongoDB简介</a>
+						</li>
+						<li class="list-group-item">
+							<a href="#">MongoDB简介</a>
+						</li>
+						<li class="list-group-item">
+							<a href="#">MongoDB简介</a>
+						</li>
+						<li class="list-group-item">
+							<a href="#">MongoDB简介</a>
+						</li>
+						<li class="list-group-item">
+							<a href="#">MongoDB简介</a>
+						</li>
+						<li class="list-group-item">
+							<a href="#">MongoDB简介</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-8">
+					<table class="table  table-hover">
+						<caption>[资源列表]</caption>
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>资源名称</th>
+								<th>路径</th>
+								<th>简介</th>
+								<th>作者</th>
+								<th>时间</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">
+									<input type="checkbox" name="resourceId" />
+								</th>
+								<td>Mark</td>
+								<td>Otto</td>
+								<td>@mdo</td>
+								<td>@mdo</td>
+								<td>@mdo</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									<input type="checkbox" name="resourceId" />
+								</th>
+								<td>Jacob</td>
+								<td>Thornton</td>
+								<td>@fat</td>
+								<td>@fat</td>
+								<td>@mdo</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									<input type="checkbox" name="resourceId" />
+								</th>
+								<td>Larry</td>
+								<td>the Bird</td>
+								<td>@twitter</td>
+								<td>@fat</td>
+								<td>@mdo</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									<input type="checkbox" name="resourceId" />
+								</th>
+								<td>Larry</td>
+								<td>the Bird</td>
+								<td>@twitter</td>
+								<td>@fat</td>
+								<td>@mdo</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									<input type="checkbox" name="resourceId" />
+								</th>
+								<td>Larry</td>
+								<td>the Bird</td>
+								<td>@twitter</td>
+								<td>@fat</td>
+								<td>@mdo</td>
+							</tr>
+						</tbody>
+					</table>
+					<ul class="pager">
+						<li>
+							<a href="#">上一页</a>
+						</li>
+						<li>
+							<a href="#">下一页</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-2">
+					<ul class="list-group">
+						<li class="list-group-item">
+							<a href="#">系统公告</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("#add").click(function() {
+				alert(122);
+			});
+		});
+	</script>
+
+</html>

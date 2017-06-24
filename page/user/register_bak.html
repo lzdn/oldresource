@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>WIKI-REGISTER</title>
+		<link rel="stylesheet" href="../../css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" href="../../css/bootstrap.min.css" />
+	</head>
+
+	<body>
+		<div class="container">
+			<h4>[注册]</h4>
+			<form id="registerForm">
+				<label>帐号：</label>
+				<input type="text" placeholder="username" required="required" name="username" oninvalid="setCustomValidity('请填写帐号！');" oninput="setCustomValidity('');" /><br />
+				<label>密码：</label>
+				<input type="password" placeholder="password" required="required" name="password" oninvalid="setCustomValidity('请填写密码！');" oninput="setCustomValidity('');" /><br />
+				<label>邮箱：</label>
+				<input type="email" placeholder="email" name="email" required="required" oninvalid="setCustomValidity('请填写邮箱！');" oninput="setCustomValidity('');" /><br />
+				<span><a href="login.html">已经有帐号?</a></span><br />
+				<input type="submit" class="bg-primary" id="submitFm" value="提交" onclick="submitForm()" />
+			</form>
+		</div>
+
+	</body>
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery.serializejson.min.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery.validate.min.js" ></script>
+	<script type="text/javascript" src="../../js/constant.js"></script>
+	<script type="text/javascript">
+		function submitForm() {
+			//	var registerForm = $("#registerForm").serialize(); //序列化表格内容为字符串
+			var registerFormJson = JSON.stringify($("#registerForm").serializeJSON());
+			console.log(registerFormJson)
+			$.ajax({
+				url: STATIC_URL + '/webapi/user',
+				contentType: "application/json;charset=utf-8",
+				data: registerFormJson,
+				type: 'post',
+				cache: false,
+				dataType: 'text',
+				//在请求之前调用的函数
+				beforeSend: function() {
+					alert("正在执行中...")
+				},
+				success: function(data) {
+					alert(data)
+				},
+				//调用执行后调用的函数
+				complete: function(data) {
+					//	 alert("完成。")
+				},
+				error: function() {
+					alert('注册失败')
+				}
+			});
+
+		}
+	</script>
+
+</html>
